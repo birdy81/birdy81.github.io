@@ -2,9 +2,10 @@ body, html {
     height: 100%;
     margin: 0;
     display: flex;
-    flex-direction: column; /* Anpassung für vertikale Anordnung */
+    flex-direction: column;
     justify-content: flex-start; /* Titel oben ausrichten */
     align-items: center;
+    position: relative; /* Positionierung relativ zur elterlichen Ansicht */
 }
 
 #title {
@@ -12,13 +13,16 @@ body, html {
     padding: 10px;
     width: 100%;
     text-align: center;
+    position: absolute; /* Positionierung relativ zum übergeordneten Container */
+    top: 0; /* Oben am Anfang der Ansicht ausrichten */
     z-index: 1000; /* Überlagerung über der Karte */
 }
 
 #map-container {
     width: 100%;
-    flex-grow: 1; /* Füllt den verfügbaren Platz aus */
-    border: 1px solid #ccc; /* Optional: Rahmen um den Container */
+    height: 100%;
+    position: relative; /* Positionierung relativ zur elterlichen Ansicht */
+    z-index: 0; /* Standard-Z-Index für Karte */
 }
 
 #map {
