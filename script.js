@@ -3,9 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var map = L.map('map').setView([48.1351, 11.5820], 10); //munich
 
     // Hinzufügen einer Grundkarte
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);    
 
     // Array, um Heatmap-Punkte zu speichern
     var heatPoints = [];
@@ -13,7 +11,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // Funktion zum Laden von GPX-Dateien
     function loadGPX(file) {
         new L.GPX(file, {
-            async: true
+            async: true,
+            display_wpt:false
         }).on('loaded', function(e) {
             var gpx = e.target;
             var latlngs = gpx.getLatLngs();
@@ -26,7 +25,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Laden der GPX-Dateien aus dem tracks-Ordner
-    var gpxFiles = ['tracks/track1.gpx', 'tracks/track2.gpx', 'tracks/track3.gpx']; // Beispiel-Pfade
+    var gpxFiles = [
+                    'tracks/track1.gpx', 
+                    'tracks/track2.gpx', 
+                    'tracks/track3.gpx'
+                   ];              
     gpxFiles.forEach(function(file) {
         loadGPX(file);
     });
