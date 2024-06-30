@@ -2,7 +2,8 @@ body, html {
     height: 100%;
     margin: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Anpassung für vertikale Anordnung */
+    justify-content: flex-start; /* Titel oben ausrichten */
     align-items: center;
 }
 
@@ -11,11 +12,12 @@ body, html {
     padding: 10px;
     width: 100%;
     text-align: center;
+    z-index: 1000; /* Überlagerung über der Karte */
 }
 
 #map-container {
-    width: 800px; /* Breite des Containers */
-    height: 500px; /* Höhe des Containers */
+    width: 100%;
+    flex-grow: 1; /* Füllt den verfügbaren Platz aus */
     border: 1px solid #ccc; /* Optional: Rahmen um den Container */
 }
 
