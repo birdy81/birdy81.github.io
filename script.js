@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Initialisierung der Karte
-    var map = L.map('map').setView([48.1351, 11.5820], 1); //munich
+    var map = L.map('map').setView([48.1351, 11.5820], 100); //munich
 
     // Hinzufügen einer Grundkarte
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
