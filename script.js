@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // Initialisierung der Karte
     var map = L.map('map').setView([48.1351, 11.5820], 10); //munich
 
-    // Hinzufügen einer Grundkarte
+    // Hinzufügen einer Grundkarte ohne Standard-Attribution
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        attribution: '', // Leer lassen, um die Standard-Attribution zu entfernen
     }).addTo(map);
 
     // Array, um Heatmap-Punkte zu speichern
