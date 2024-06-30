@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
             var gpx = e.target;
             var latlngs = gpx.getLatLngs();
             latlngs.forEach(function(latlng) {
-                heatPoints.push([latlng.lat, latlng.lng, 0.5]); // 0.5 ist die Intensität
+                heatPoints.push([latlng.lat, latlng.lng, 1]); // 0.5 ist die Intensität
             });
             // Heatmap aktualisieren
             var heat = L.heatLayer(heatPoints, {radius: 25}).addTo(map);
