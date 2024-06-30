@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Initialisierung der Karte
-    var map = L.map('map').setView([48.1351, 11.5820], 13); //munich
+    var map = L.map('map').setView([48.1351, 11.5820], 1); //munich
 
     // Hinzufügen einer Grundkarte
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Laden der GPX-Dateien aus dem tracks-Ordner
-    var gpxFiles = ['tracks/track1.gpx', 'tracks/track2.gpx']; // Beispiel-Pfade
+    var gpxFiles = ['tracks/track1.gpx']; // Beispiel-Pfade
     gpxFiles.forEach(function(file) {
         loadGPX(file);
     });
