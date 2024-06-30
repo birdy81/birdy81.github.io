@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Laden der GPX-Dateien aus dem tracks-Ordner
-    var gpxFiles = ['tracks/track1.gpx']; // Beispiel-Pfade
+    var gpxFiles = ['tracks/track1.gpx', 'tracks/track2.gpx', 'tracks/track3.gpx']; // Beispiel-Pfade
     gpxFiles.forEach(function(file) {
         loadGPX(file);
     });
