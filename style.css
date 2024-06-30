@@ -1,7 +1,17 @@
 body, html {
     height: 100%;
     margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+#map-container {
+    width: 600px; /* Breite des Containers */
+    height: 400px; /* Höhe des Containers */
+    border: 1px solid #ccc; /* Optional: Rahmen um den Container */
+}
+
 #map {
     width: 100%;
     height: 100%;
