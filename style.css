@@ -7,8 +7,8 @@ body, html {
 }
 
 #map-container {
-    width: 600px; /* Breite des Containers */
-    height: 400px; /* Höhe des Containers */
+    width: 800px; /* Breite des Containers */
+    height: 500px; /* Höhe des Containers */
     border: 1px solid #ccc; /* Optional: Rahmen um den Container */
 }
 
