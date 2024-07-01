@@ -1,26 +1,41 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Initialisierung der Karte
-    var map = L.map('map').setView([48.1351, 11.5820], 10); //munich
+    var map = L.map('map').setView([48.1351, 11.5820], 10); // Munich
 
     // Hinzufügen einer Grundkarte
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);    
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'OpenStreetMap contributors'
+    }).addTo(map);
 
-    // Array, um Heatmap-Punkte zu speichern
-    var heatPoints = [];
+    // Heatmap Layer
+    var heat = L.heatLayer([], { radius: 8 }).addTo(map);
 
     // Funktion zum Laden von GPX-Dateien
     function loadGPX(file) {
         new L.GPX(file, {
+            polyline_options: {
+                color: 'blue',
+                weight: 5,
+                opacity: 0.3
+            },
             async: true,
-            display_wpt:false
+            gpx_options: {
+                parseElements: ['track']
+            },
+            marker_options: {
+                startIconUrl: '',
+                endIconUrl: '',
+                shadowUrl: ''
+            }
         }).on('loaded', function(e) {
-            var gpx = e.target;
-            var latlngs = gpx.getLatLngs();
-            latlngs.forEach(function(latlng) {
-                heatPoints.push([latlng.lat, latlng.lng, 1]); // 0.5 ist die Intensität
+            map.fitBounds(e.target.getBounds());
+        }).on('addline', function(e) {
+            var line = e.line.getLatLngs();
+            line.forEach(function(latlng) {
+                heat.addLatLng([latlng.lat, latlng.lng]);
             });
-            // Heatmap aktualisieren
-            var heat = L.heatLayer(heatPoints, {radius: 35}).addTo(map);
+        }).on('error', function(e) {
+            console.error('Error loading GPX file:', e);
         }).addTo(map);
     }
 
@@ -28,7 +43,14 @@ document.addEventListener("DOMContentLoaded", function() {
     var gpxFiles = [
                     'tracks/track1.gpx', 
                     'tracks/track2.gpx', 
-                    'tracks/track3.gpx'
+                    'tracks/track3.gpx',
+                    'tracks/track4.gpx',
+                    'tracks/track5.gpx',
+                    'tracks/track6.gpx',
+                    'tracks/track7.gpx',
+                    'tracks/track8.gpx',
+                    'tracks/track9.gpx',
+                    'tracks/track10.gpx'
                    ];              
     gpxFiles.forEach(function(file) {
         loadGPX(file);
