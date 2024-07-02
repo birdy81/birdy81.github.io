@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cycling in Aubing</title>
+    <link>https://birdy81.github.io/</link>
+    <description>Recent content on Cycling in Aubing</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <managingEditor>youremail@domain.com (Starke Wadeln)</managingEditor>
+    <webMaster>youremail@domain.com (Starke Wadeln)</webMaster>
+    <lastBuildDate>Tue, 02 Jul 2024 12:00:00 +0000</lastBuildDate>
+    <atom:link href="https://birdy81.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unser Trainingsfahrten in Aubing</title>
+      <link>https://birdy81.github.io/posts/my-first-post/</link>
+      <pubDate>Tue, 02 Jul 2024 12:00:00 +0000</pubDate><author>youremail@domain.com (Starke Wadeln)</author>
+      <guid>https://birdy81.github.io/posts/my-first-post/</guid>
+      <description> </description>
+    </item>
+  </channel>
+</rss>
